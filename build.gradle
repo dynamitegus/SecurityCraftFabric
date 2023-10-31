@@ -106,7 +106,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.22.0+build.408-1.16"
 
     // ModMenu
-    modImplementation "io.github.prospector:modmenu:1.14.6+build.31"
+    //modImplementation "io.github.prospector:modmenu:1.14.6+build.31" // im not sure why this is here and i have removed bc gradle wouldnt work
 
     // REI
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:5.6.2"
@@ -119,7 +119,7 @@ dependencies {
     include "me.sargunvohra.mcmods:autoconfig1u:3.2.2"
 
     // LibGui
-    modImplementation "io.github.cottonmc:LibGui:3.2.1+1.16.3"
+    //modImplementation "io.github.cottonmc:LibGui:3.2.1+1.16.3"
 }
 
 //jar {
