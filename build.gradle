@@ -12,7 +12,7 @@ base {
 	archivesName = project.archives_base_name
 }
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.17'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
 
 //processResources {
 //	exclude ".cache"
@@ -113,7 +113,7 @@ dependencies {
     //modImplementation "io.github.prospector:modmenu:1.14.6+build.31" // im not sure why this is here and i have removed bc gradle wouldnt work
 
     // REI
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:5.6.2"
+    //modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:5.6.2"
     //modRuntime "me.shedaniel:RoughlyEnoughItems:5.6.2"//breaks gradle build I STILL DONT HAVE THE ENV SETUO
 
     // AutoConfig
