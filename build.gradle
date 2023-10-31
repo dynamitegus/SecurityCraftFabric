@@ -2,14 +2,17 @@
 //import groovy.json.JsonSlurper
 
 plugins {
-    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'fabric-loom' version '1.4-SNAPSHOT'
 }
 
-version = '1.0'
-group = 'net.geforcemods.securitycraft'
-archivesBaseName = 'securitycraft'
+version = project.mod_version
+group = project.maven_group
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+base {
+	archivesName = project.archives_base_name
+}
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.17'
 
 //processResources {
 //	exclude ".cache"
@@ -100,17 +103,18 @@ dependencies {
 //	implementation fg.deobf("mezz.jei:jei-1.16.3:7.5.0.42")
 //	implementation fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.0.3-beta-6")
 //    implementation fg.deobf("mcp.mobius.waila:Hwyla:1.10.11-B78_1.16.2")
-    minecraft 'com.mojang:minecraft:1.16.3'
-    mappings 'net.fabricmc:yarn:1.16.3+build.47:v2'
-    modImplementation "net.fabricmc:fabric-loader:0.10.0+build.208"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.22.0+build.408-1.16"
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     // ModMenu
     //modImplementation "io.github.prospector:modmenu:1.14.6+build.31" // im not sure why this is here and i have removed bc gradle wouldnt work
 
     // REI
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:5.6.2"
-    modRuntime "me.shedaniel:RoughlyEnoughItems:5.6.2"
+    //modRuntime "me.shedaniel:RoughlyEnoughItems:5.6.2"//breaks gradle build I STILL DONT HAVE THE ENV SETUO
 
     // AutoConfig
     modApi("me.sargunvohra.mcmods:autoconfig1u:3.2.2") {
